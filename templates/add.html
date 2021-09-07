@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Admin</title>
+<style> input{ margin: 5px;}</style>
+</head>
+<body style="background-color: rgb(2, 2, 24);">
+<form action="/addItem" method="POST" enctype="multipart/form-data" style="background-color:rgb(171, 176, 201); width:500px ;height: 600px; padding: 100px;font-size: 400;">
+	<center><h1>Add Items</h1></center>
+	Name: <input type="text" name="name" style="padding: 10px;border-radius: 30px; width: 350px;" ><br>
+	Price: <input type="text" name="price" style="padding: 10px;border-radius: 30px; width: 350px;"><br>
+	Description: <textarea name="description" rows=3 cols="40" style="padding: 10px;border-radius: 30px; width: 310px;"></textarea><br>
+	Image: <input type="file" name="image" style="padding: 10px;border-radius: 30px; width: 350px;"><br>
+	Stock: <input type="text" name="stock" style="padding: 10px;border-radius: 30px; width: 350px;"><br>
+	Category: <select name="category" style="padding: 10px;border-radius: 30px; width: 350px;">
+		{% for row in categories %}
+			<option value="{{row[0]}}">{{row[1]}}</option>
+		{% endfor %}
+	</select><br>
+	<input type="submit" style="padding: 10px; background-color: rgb(91, 98, 109); border-radius: 20px;" >
+</form>
+</body>
+</html>
+
